@@ -1,0 +1,13 @@
+diff --git a/giraph-core/src/main/java/org/apache/giraph/job/GiraphJob.java b/giraph-core/src/main/java/org/apache/giraph/job/GiraphJob.java
+index b11f131..b9ad86e 100644
+--- a/giraph-core/src/main/java/org/apache/giraph/job/GiraphJob.java
++++ b/giraph-core/src/main/java/org/apache/giraph/job/GiraphJob.java
+@@ -210,7 +210,7 @@ public class GiraphJob {
+ 
+     // Set the ping interval to 5 minutes instead of one minute
+     // (DEFAULT_PING_INTERVAL)
+-    Client.setPingInterval(giraphConfiguration, 60000 * 5);
++    giraphConfiguration.setInt("ipc.ping.interval", 60000 * 5);
+ 
+     // Should work in MAPREDUCE-1938 to let the user jars/classes
+     // get loaded first
